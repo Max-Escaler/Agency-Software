@@ -1,0 +1,132 @@
+/*
+ * This is a sample function to create a log entry when some other
+ * record is changed (e.g., based on trigger).
+ *
+ * In this case, a log entry will be added when a new incident record
+ * is added.  (This was created for Plymouth Housing Group--incident
+ * records are not currently part of the AGENCY code, but should be 
+ * added.
+ *
+ * This was copied from create.elevated_concern.sql
+ *
+*/
+
+CREATE OR REPLACE FUNCTION incident_post_log() RETURNS TRIGGER AS $$
+	/*
+	 * Post a log when incident record added.
+	 */
+
+DECLARE
+	log_type TEXT[];
+	log_sub TEXT;
+	log_txt TEXT;
+	nlogid  INTEGER;
+	staff INTEGER[];
+	st INTEGER;
+	ends INTEGER;
+BEGIN
+	log_type := ARRAY [ 
+		CASE WHEN NEW.incident_location_code IN ('LEW','SGO') THEN
+			'SGO-LEW'
+		WHEN NEW.incident_location_code IN (SELECT log_type_code FROM l_log_type) THEN
+			NEW.incident_location_code
+		ELSE
+			NULL
+		END ];
+	 
+	IF TG_OP='INSERT' THEN
+		log_sub := 'New incident:  ' || COALESCE(NEW.incident_type_code,'') || '@' || COALESCE(NEW.incident_location_code,'');
+		log_txt := log_sub||E'\n\nFor more information, see Incident ' || NEW.incident_id::text || '.';
+	ELSEIF TG_OP='UPDATE' THEN
+		RETURN NEW;
+	ELSE
+		RETURN NEW;
+	END IF;
+
+	--insert log
+	INSERT INTO tbl_log (
+		log_type_code,
+		subject,
+		log_text,
+		written_by,
+		added_by,
+		added_at,
+		changed_by,
+		sys_log
+	) VALUES (
+		log_type,
+		log_sub,
+		log_txt,
+		sys_user(), -- written_by,
+		sys_user(), -- added_by,
+		CURRENT_TIMESTAMP(0), -- added_at,
+		sys_user(), -- changed_by,
+		'Log Auto-created by adding incident.'
+	);
+
+/*
+--This is all leftover sample code
+--To do fancy things like add refereneces
+--And alerts
+
+	) RETURNING log_id INTO nlogid;
+
+	--insert client_ref
+	INSERT INTO tbl_client_ref (
+		client_id,
+		ref_table,
+		ref_id,
+		added_by,
+		changed_by,
+		sys_log
+	) VALUES (
+		NEW.client_id,
+		'LOG',
+		nlogid,
+		sys_user(),
+		sys_user(),
+		'Elevated Concern List auto-creating log'
+	);	
+*/
+
+/*
+	--send out alerts
+	staff := staff_alert_client_assign(NEW.client_id);
+	st := 1;
+	ends := array_count(staff);
+	IF (ends > 0) THEN
+		FOR i IN st..ends LOOP
+			IF (staff[i] <> NEW.changed_by) THEN
+				--insert alert
+				INSERT INTO tbl_alert (
+					staff_id,
+					ref_table,
+					ref_id,
+					alert_subject,
+					added_by,
+					changed_by
+				) VALUES (
+					staff[i],
+					'LOG',
+					nlogid,
+					log_sub,
+					sys_user(),
+					sys_user());
+			END IF;
+	  	END LOOP;
+	END IF;
+*/
+	RETURN NEW;
+
+END;$$ LANGUAGE plpgsql;
+
+/*
+ * This is done in the db_mod
+ */
+
+/*
+CREATE TRIGGER incident_insert_post_log AFTER INSERT
+    ON tbl_incident FOR EACH ROW
+    EXECUTE PROCEDURE incident_post_log();
+*/
+

@@ -1,0 +1,40 @@
+.childListDataLog { background-color: #FFEEEE; }
+
+div.listObjectReportCustom {
+	border-color: #CCCCFF;
+	border-radius: 25px;
+	background-color: #BBBBFF;
+	border-top: 5px;
+	padding: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+div.engineMainReport {
+	background-color: #DDDDFF;
+	width: auto;
+	border-color: #000022;
+	border-radius: 25px;
+	margin: 15px;
+	padding: 15px;
+}
+
+div.engineMainReport table.generalTable {
+	background-color:#DDDDFF;
+}
+
+div.engineMain .listLinks {
+	white-space: nowrap;
+	margin: 2px; 
+}
+
+div.listObjectReportCustom H4 {
+	margin-top: 5px;
+	padding-top: 1px;
+	font-size: 140%;
+	font-weight: bold;
+	color: #000033;
+	margin-bottom: 5px;
+}
+div.listObjectReportCustom ul { margin-bottom: 2.5em; }
+

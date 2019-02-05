@@ -1,0 +1,14 @@
+.pick { background-color: #ff8000; }
+
+.homeMenu { color: #000;
+		background-color:	#ffff8b;
+}
+
+.listControl,.listControlAdvanced { background-color: #ff8100; }
+.listHeader { background-color: #ccccff; }
+.listHeader td {
+				padding-top: 4px;
+				padding-bottom: 6px; 
+				padding-left: 4px; }
+td.generalDataHeader { background-color: #f0f0ff; }
+

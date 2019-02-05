@@ -1,0 +1,105 @@
+***SINCE AGENCY IS A FORK AND CONTINUATION OF
+   CHASERS, THE ORIGINAL README FOR CHASERS
+   IS INCLUDED HERE FOR CONTINUITY AND FOR
+   HISTORICAL PURPOSES.                  ****
+
+
+***Overview***
+
+This is the README for CHASERS.
+
+CHASERS stands for Client, Housing And Service 
+Information (and) Reporting System.
+
+CHASERS is software created by:
+
+Downtown Emergency Service Center.
+515 Third Avenue
+Seattle, WA  98104 (USA)
+(206) 464-1570
+info@desc.org
+
+For more information about DESC, see http://www.desc.org/
+For more information about CHASERS, see http://chasers.desc.org/
+
+
+***Installation***
+
+(more detailed directions are in INSTALL.txt in ./database/pg/client/)
+
+1) change to the correct database directory (only pg is currently supported)
+
+2) As postgres super-user run install.db.sql (read this script for instructions on creating the db and user)
+
+3) after editing and making any structural changes, run install.sql from same directory
+
+4) edit agency_config.php and config/client_config.php accordingly (making sure to select the
+   various tables/objects installed in step 3)
+
+5) in the scripts directory, run enable_changed_at_trigger.php to enable automatic changed_at updates
+
+6) in the scripts directory, run enable_table_logging_all.php to enable table logging for all appropriate tables
+
+7) browse to the install location and get started...
+
+
+***Installation Troubleshooting/Common Pitfalls***
+
+* If username/password combo is being rejected, verify that $AG_AUTH_DEFINITION in agency_config.php
+  is configured to match your database password storage structure (eg, flipbit storage versus md5).
+
+* pages are loading blank
+  a) make sure memory_limit in php.ini is at least 32M
+  b) while setting up installation, set display_errors = On in php.ini
+
+
+***History/Initial README***
+
+This is the initial dump into CVS of a new information system for
+the Downtown Emergency Service Center (DESC).  In case anyone doesn't
+know, DESC is a non-profit agency serving the most disabled and vulnerable
+homeless adults in the Seattle, WA (USA) area.  DESC provides a continuum of care
+that includes emergency shelter and survival services, clinical services
+including mental health and chemical dependency, and supportive housing,
+both permanent and transitional, with clinical resources on-site at
+each facility.
+ 
+With a tentative working title of CHASERS (Client Housing And Service Entry
+and Reporting System), the goals of this system are to capture information
+about the clients served at DESC, and the services we provide.  Goals are to
+produce information to faciliate a variety of purposes, including contract compl
+iance
+reporting, information for agency promotion and conveying to the community what DESC
+does and why it's worthwhile, providing better services to clients (both by
+streamlining and facilitating access to all the information about an individual,
+and by providing data on groups of clients for analysis towards understanding
+needs and improving service delivery), and finally to facilitate and streamline
+operations at DESC.
+ 
+CHASERS is intended to replace SHAMIS, DESC's currently operational system,
+which is used in the shelter and mental health programs.  Goals for CHASERS
+that address identified weaknesses in SHAMIS include increased reliability,
+access from multiple sites, a truly integrated system that captures information
+agencywide, and improved reporting ability that will make the information
+in CHASERS more easily accessible, and from a larger number of staff people.
+ 
+(Please note that this is not a formal or official statement of CHASER goals
+and characteristics, merely a hastily-produced general outline that probably
+has several important omissions.  Canonical definitions can be found elsewhere.)
+ 
+At the moment of this dump, CHASERS is extremely embryonic.  It currently has
+some sloppy and hastily-implemented code to provide lookup and display of
+clients, and to provide browsing and reading of the log system.  Both of these
+are currently operating off data mirrored from the shelter system.
+ 
+The first goal for CHASERS is to duplicate the functionality of the shelter
+SHAMIS system, which would allow us to turn that system off, and to save
+significant staff time that is currently devoted to maintaining shelter Shamis.
+ 
+Within shelter SHAMIS, the log system has been identified as the first
+target for replacement, as it is super-problematic.
+ 
+If I understood the cvs HOWTO, and got the tags right, this "version" of
+CHASERS has been designated 0.1.
+ 
+(Ken T)

@@ -1,0 +1,55 @@
+<?php
+
+/*
+ * This file has database connection info for AGENCY
+ *
+ * Since this file has passwords, permissions 
+ * should be as tight as possible.
+ *
+ */
+
+/*
+ * This is the key configuration section, to allow
+ * AGENCY to connect to the Postgres database.
+ */
+
+//Postgres:
+$db_server["pg"]    = 'localhost';
+$db_user_name["pg"] = ''; // Fill these in with your values
+$db_password["pg"]  = ''; // Fill these in with your values
+$database["pg"]     = ''; // Fill these in with your values
+$db_port['pg']      = '5432';
+
+/*
+ * You probably don't need to edit anything below here.
+ */
+
+/*
+ * Read-Only DB Access - used for DB maintenance
+ *
+ *    Set to true and then define a read-only user and password.
+ *
+ *    Note: User should be set up in PostgreSQL as read-only by using the 
+ *          plpgsql function grant_read_permissions_all().
+ */
+
+if (AG_READ_ONLY_MODE) {
+	// these must be set in order to connect in read-only mode
+	$db_user_name['pg'] = 'agency_read_only';
+	$db_password['pg']  = '';
+}
+
+/*
+ * Currently the MySQL settings are only used for access to Bugzilla.
+ * You probably don't need to change them.
+ */
+
+//MYSQL:
+$db_server["my"]    = 'localhost';
+$db_user_name["my"] = '';
+$db_password["my"]  = '';
+$database["my"]     = '';
+$db_port['my']      = null;
+
+
+?>

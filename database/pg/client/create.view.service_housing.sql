@@ -1,0 +1,21 @@
+CREATE OR REPLACE VIEW service_housing AS
+SELECT 	service_id,
+	client_id,
+	contact_type_code,
+	service_code,
+	service_minutes,
+	service_by,
+	service_date,
+	progress_note,
+	service_project_code,
+	service_progress_note_id,
+	added_by,
+	added_at,
+	changed_by,
+	changed_at,
+	is_deleted,
+	deleted_at,
+	deleted_by,
+	deleted_comment,
+	sys_log
+ FROM tbl_service WHERE service_project_code = 'HOUSING' AND NOT is_deleted;

@@ -1,0 +1,53 @@
+CREATE TABLE tbl_medical_health 
+	(
+--updating create statement to include client_id and date
+	medical_health_id				SERIAL PRIMARY KEY,
+	client_id					INTEGER NOT NULL REFERENCES tbl_client (client_id),
+	medical_health_date				DATE NOT NULL,
+	high_blood_pressure_code			VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	low_blood_pressure_code				VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	tuberculosis_code				VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	hiv_positive_symptomatic_asymptomatic_code	VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	stomach_intestine_infection_code		VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	diabetes_code					VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	frostbite_code					VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	heart_disease_code				VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	cancer_code					VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	chronic_infection_code				VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	broken_bone_code				VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	hepatitis_code					VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	hepatitis_type_code				VARCHAR(10) REFERENCES tbl_l_hepatitis_type ( hepatitis_type_code ),
+	other_liver_disease_code			VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	shortness_of_breath_code			VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	shortness_of_breath_asthma_code		VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	shortness_of_breath_emphysema_code		VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	seizures_code					VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	dental_problems_infection_code		VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	cuts_injuries_code				VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_01_code					VARCHAR(10) NOT NULL REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_01_detail					TEXT,
+	other_02_code					VARCHAR(10) REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_02_detail					TEXT,
+	other_03_code					VARCHAR(10) REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_03_detail					TEXT,
+	other_04_code					VARCHAR(10) REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_04_detail					TEXT,
+	other_05_code					VARCHAR(10) REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_05_detail					TEXT,
+	other_06_code					VARCHAR(10) REFERENCES tbl_l_yes_no_3month ( yes_no_3month_code),
+	other_06_detail					TEXT,
+	comment						TEXT,
+	--system fields
+	added_by			INTEGER NOT NULL REFERENCES tbl_staff (staff_id),
+	added_at			TIMESTAMP(0)     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	changed_by			INTEGER NOT NULL  REFERENCES tbl_staff (staff_id),
+	changed_at			TIMESTAMP(0)     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	is_deleted			BOOLEAN NOT NULL DEFAULT FALSE,
+	deleted_at			TIMESTAMP(0) CHECK ((NOT is_deleted AND deleted_at IS NULL) OR (is_deleted AND deleted_at IS NOT NULL)),
+	deleted_by			INTEGER REFERENCES tbl_staff(staff_id)
+						  CHECK ((NOT is_deleted AND deleted_by IS NULL) OR (is_deleted AND deleted_by IS NOT NULL)),
+	deleted_comment		TEXT,
+	sys_log			TEXT
+	);
+
+CREATE VIEW medical_health AS SELECT * FROM tbl_medical_health WHERE NOT is_deleted;

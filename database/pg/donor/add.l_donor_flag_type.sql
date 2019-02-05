@@ -1,0 +1,12 @@
+INSERT INTO tbl_l_donor_flag_type VALUES ('1TIM', 'One-Time Volunteer',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('1XVO', 'One-Time Ex Volunteer',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('BOAR', 'Board Member',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('CSER', 'Community Service',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('M&SH', 'Mover & Shaker',sys_user(),current_timestamp,sys_user(),current_timestamp); 
+INSERT INTO tbl_l_donor_flag_type VALUES ('PLAN', 'Planned Giving',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('STAF', 'Staff',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('VOLU', 'Volunteer',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('XBOA', 'Ex-Board Member',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('XCLI', 'Ex-Client',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('XSTA', 'Ex-Staff Member',sys_user(),current_timestamp,sys_user(),current_timestamp);
+INSERT INTO tbl_l_donor_flag_type VALUES ('XVOL', 'Ex-Volunteer',sys_user(),current_timestamp,sys_user(),current_timestamp);

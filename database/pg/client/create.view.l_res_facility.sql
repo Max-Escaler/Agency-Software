@@ -1,0 +1,37 @@
+CREATE OR REPLACE VIEW l_res_facility AS
+
+SELECT	*
+FROM	l_facility
+ORDER BY 	
+	facility_code::TEXT = 'STREET_OLD'::TEXT,
+	facility_code::TEXT = 'UNKNOWN'::TEXT,
+	facility_code::TEXT = 'OTHER'::TEXT,
+	facility_code::TEXT = 'VIOLENCE'::TEXT,
+	facility_code::TEXT = 'HOMEOWNER'::TEXT,
+	facility_code::TEXT = 'SUBSIDIZED'::TEXT,
+	facility_code::TEXT = 'PUBLIC_HSG'::TEXT,
+	facility_code::TEXT = 'SUPP-OTH'::TEXT,
+	facility_code::TEXT = 'SUPP-DESC'::TEXT,
+	facility_code::TEXT = 'UNSUBHOUSE'::TEXT,
+	facility_code::TEXT = 'INDEPEND'::TEXT,
+	facility_code::TEXT = 'TRANS-OTH'::TEXT,
+	facility_code::TEXT = 'TREATMENT'::TEXT,
+	facility_code::TEXT = 'SOBERING'::TEXT,
+	facility_code::TEXT = 'JAIL'::TEXT,
+	facility_code::TEXT = 'ASTLIVC'::TEXT,
+	facility_code::TEXT = 'NURSING'::TEXT,
+	facility_code::TEXT = 'HOSPITAL'::TEXT,
+	facility_code::TEXT = 'PSYCH'::TEXT,
+	facility_code::TEXT = 'HOMELESS'::TEXT,
+	facility_code::TEXT = 'TRANS_SITE'::TEXT,
+	facility_code::TEXT = 'BUILDING'::TEXT,
+	facility_code::TEXT = 'VEHICLE'::TEXT,
+	facility_code::TEXT = 'OUTSIDE'::TEXT,
+	facility_code::TEXT = 'MOTEL'::TEXT,
+	facility_code::TEXT = 'SHEL-OTH'::TEXT,
+	facility_code::TEXT = 'SHEL-VOUCH'::TEXT,
+	facility_code::TEXT = 'SHEL-HEET'::TEXT,
+	facility_code::TEXT = 'SHEL-DESC'::TEXT,
+	facility_code::TEXT = 'JUV_DETEN'::TEXT,
+	facility_code::TEXT = 'FOSTER'::TEXT,
+	facility_code::TEXT = 'FAM_FRIEND'::TEXT;

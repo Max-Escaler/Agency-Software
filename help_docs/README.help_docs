@@ -1,0 +1,11 @@
+You can place documents in this folder that can be referenced in AGENCY.
+(on-screen help, related information, etc.)
+The location of this directory is specified in agency_config.php: AG_HELP_DOC_LOCATION
+At least right now, it must be with the webserver space, as the documents are linked to
+and served directly.
+
+There is a PHP function called doc_link(filename,label) that will references these files.
+
+Here is a sample usage in a config file:
+
+'subtitle_eval_code'=>'doc_link("consent_cheat_sheet.docx","See required consent/documentation")',

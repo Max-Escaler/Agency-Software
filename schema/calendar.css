@@ -1,0 +1,92 @@
+
+/*
+<LICENSE>
+
+This file is part of AGENCY.
+
+AGENCY is Copyright (c) 2003-2017 by Ken Tanzer and Downtown Emergency
+Service Center (DESC).
+
+All rights reserved.
+
+For more information about AGENCY, see http://agency-software.org/
+For more information about DESC, see http://www.desc.org/.
+
+AGENCY is free software: you can redistribute it and/or modify
+it under the terms of version 3 of the GNU General Public License
+as published by the Free Software Foundation.
+
+AGENCY is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with AGENCY.  If not, see <http://www.gnu.org/licenses/>.
+
+For additional information, see the README.copyright file that
+should be included in this distribution.
+
+</LICENSE>
+*/
+
+/*
+ *
+ *   CHANGE THEMES Individual in calendar_s.php
+ */
+
+/* menu */
+
+ul.calMenu { }
+div.calMenu { color: white; background-color: #313031; width: 30%; margin: 0px; padding: 2px;}
+
+
+/* navigation */
+div.navCalendar { text-align: center; }
+a.navCalendar { text-decoration: none; font-size: 270%; font-weight: boldest; margin: 0px 20px;}
+a.calendarConBox { font-size: 75%; text-decoration: none; }
+a.calendarConBox:hover,a.calendarConBox:active { color: #f00; font-size: 80%; text-decoration: ubderline;}
+
+.calendar, .calendarHalf { margin: 0px; }
+h1.calendar { text-align: center;
+	font-size: 150%;
+	font-weight: bold; }
+
+td.calendar { height: 2em; }
+td.calendar, td.calendarHalf { border-bottom-style: solid;
+		border-bottom-width: 0.1em; 
+		border-right-style: solid;
+		border-right-width: 0.1em;
+}
+
+a.calendar, a.calendarHalf { text-decoration: none; 
+	display: block;
+	width: 9.9em;
+	margin-left: 0.1em;
+}
+a.calendar { height: 1.9em; }
+
+/* half height cells/links */
+td.calendarHalf { height: 1em; }
+a.calendarHalf { height: 0.9em; }
+/*
+	header cells
+*/
+td.calendarH , td.calendar { width: 10em; }
+td.calendarT { width: 5em; }
+
+td.calendarT, td.calendarH { 
+	height: 4.0em;
+	text-align: center; }
+span.calendarH { font-size: 75%; }
+/*
+	event cells
+*/
+
+td.calendarB, td.calendarE { width: 10em; }
+span.calendarB, span.calendarE { display: block; font-size: 0.65em; } /* client name, summary etc */
+div.calendarE{ float: right; font-size: 0.6em; } /* edit link etc */
+
+/* these cells exist within a table embedded in a calendarE cell */
+.calendarOverlapSubCell { font-size: 75%; }
+td.calendarOverlapSubCell { padding: 0px 1px; }

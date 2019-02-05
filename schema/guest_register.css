@@ -1,0 +1,188 @@
+body {
+	padding: 20px;
+}
+
+body.guestLoginScreen {
+	background-color: #FFFFBB;
+}
+
+.guestLoginScreenInvisible {
+	font-color: #FFFFBB;
+}	
+
+body.guestMenuScreen {
+	background-color: #BBFFBB;
+}
+
+body.guestSigninScreen {
+	background-color: #80FF80;
+}
+
+body.guestSignoutScreen {
+	background-color: #BBFFBB;
+}
+
+body.guestSigninSelectedScreen {
+	background-color: #BBFFBB;
+}
+
+body.guestSignoutSelectedScreen {
+	background-color: #BBFFBB;
+}
+
+body.guestSigninSelectedVerifyScreen {
+	background-color: #BBFFBB;
+}
+
+body.guestSignoutSelectedVerifyScreen {
+	background-color: #BBFFBB;
+}
+
+h1 { font-size: 150%; }
+h2 { font-size: 200%; }
+
+div.guestAGENCYFooter {
+	width: 50%;
+	border: solid-black 1px;
+	font-size: 80%;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.guestButton {
+	display: inline-block;
+	margin: 10px;
+	background-color: #F8C408;
+	font-size: 150%;
+	font-weight: bold;
+	border: solid black 2px;
+}
+
+.guestMenuButton {
+	display: inline-block;
+	margin: 10px;
+	background-color: #FFFFAA;
+	font-size: 150%;
+	border: solid black 3px;
+	border-radius: 12px;
+	font-weight: bold;
+}
+
+.guestRefreshButton {
+	display: inline-block;
+	margin: 0px;
+	background-color: #FF9999;
+	font-size: 100%;
+	border: solid black 2px;
+	border-radius: 12px;
+	font-weight: bold;
+
+}
+
+.guestMenuButtons .guestMenuButton {
+	display:block;
+}
+
+.guestMenuButtons {
+	width: 30%;
+}
+
+.guestLogoutButton {
+	background-color: #FF9999;
+}
+
+.guestYesChoice { background-color: #22FF22; }
+.guestNoChoice { background-color: #FF6666; }
+
+a.guestMenuLink {
+	margin:0px;
+	padding:20px;
+	display: block; 
+}
+
+.guestResponseMessage {
+	font-size: 150%;
+	font-style: italic;
+	font-weight: bold;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.guestHeaderBlock {
+	display: block;
+	margin-top: 20px;
+
+}
+
+div.guestVisitSummary {
+	padding: 20px;
+	border: solid black 2px;
+	background-color: #DDDDFF;
+	width: 50%;
+	font-size: 150%;
+}
+
+.guestEligibleItem {
+       font-size: 150%;
+       padding 30px;
+       margin: 15px;
+       background-color: #CCFFCC;
+       font-weight: bold;
+}
+
+div.guestPhotoContainer {
+	margin: 30px;
+}
+
+img.guestPhoto {
+	height: 200px;
+}
+
+div.idWarning {
+	background-color: #FFCCCC;
+	padding: 3px;
+	border: solid 2px red;
+	width: 50%;
+}
+
+.guestHeaderBlock select {
+	font-size: 150%;
+}
+
+.guestHeaderBlock h2 {
+	font-size: 150%;
+}
+
+.guestHeaderBlock select {
+	font-size: 200%;
+}
+
+.guestHeaderBlock input {
+	font-size: 200%;
+}
+
+.guestLoginDob { display: none; }
+.guestLoginSecret { display: none; }
+.guestLoginGo { 
+	width: 30%;
+display: none; }
+
+.guestLoginGo input {
+	background-color: #88FF88;
+	padding: 15px;
+	margin: 0px;
+	display: block;
+	width: 100%;
+}
+
+.guestLoginUnit h2,
+.guestLoginSecret h2,
+.guestLoginDob h2 { 
+	font-size: 200%; 
+	font-style: italic;
+	font-weight: bold;
+}
+
+div.guestLoginDob input {
+	margin-right: 15px;
+	padding-right: 15px;
+}

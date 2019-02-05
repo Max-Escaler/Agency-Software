@@ -1,0 +1,289 @@
+/*
+<LICENSE>
+
+This file is part of AGENCY.
+
+AGENCY is Copyright (c) 2003-2017 by Ken Tanzer and Downtown Emergency
+Service Center (DESC).
+
+All rights reserved.
+
+For more information about AGENCY, see http://agency-software.org/
+For more information about DESC, see http://www.desc.org/.
+
+AGENCY is free software: you can redistribute it and/or modify
+it under the terms of version 3 of the GNU General Public License
+as published by the Free Software Foundation.
+
+AGENCY is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with AGENCY.  If not, see <http://www.gnu.org/licenses/>.
+
+For additional information, see the README.copyright file that
+should be included in this distribution.
+
+</LICENSE>
+*/
+
+/*
+ *
+ * No screen or print specific style here. Layout ONLY!
+ *
+ */
+
+body { font-family: helvetica, arial, sans-serif; 
+	background-color: #ffffff;
+}
+
+fieldset { 
+        width: 75%;
+/*
+#        border-top: solid 1px #333; 
+#        border-right: solid 2px #333; 
+#        border-bottom: solid 2px #333; 
+        border-left: solid 1px #333; 
+*/
+        background-color: #fff; 
+        margin: 5px 0px 15px 10px;}
+legend { font-weight: bold; font-size: 120%; background-color: #fff;}
+
+#footer { margin: 19px 2px; }
+
+input.qsForm { font-size: 75%;}
+input.qsForm[type=text] { width: 200px; }
+
+.title { text-align: center; margin: 12px auto 25px auto; }
+
+.comment, .error { font-weight: bold; font-family: "times new roman",serif; font-size: 120%; }
+.deadlink { color: #afafaf; text-decoration: underline; }
+.alertMark { font-size: 125%; font-weight: bold; }
+
+.mapLink {  }
+
+.pick { padding: 4px;}
+
+.radioButtonSet { white-space: nowrap; margin-right: 12px; }
+.checkBoxSet { white-space: nowrap; margin-right: 12px; }
+
+span.checkboxSelector {
+	font-size:70%;
+	display: block;
+	padding: 5px;
+	padding-left: 25px;
+	padding-bottom: 10px;
+}
+
+.indent {margin-left: 15px; font-size: 85%;}
+/* Client Notes */
+div.clientComment { width: 30%; float: right; } 
+.clientComment { width: 100%; font: x-small sans-serif;}
+.clientCommentDate { white-space: nowrap; }
+.clientCommentFlag { font-weight: bold; margin-right: 5px; }
+/* End Client Notes */
+
+.generalComment { font-style: italic; font-size: 80%; }
+
+/* forms */
+input.agencyForm[type=submit] {background-color: #444; color: #fff; border: solid 1px #444; margin: 3px 0px 0px -3px; }
+input.agencyForm[type=text]   {background-color: #fff; border: solid 1px #444; margin: 3px -1px 0px 10px; }
+
+/* Engine */
+table.listMain { border: solid 1px #000; }
+div.listMain { border: solid 1px #000; padding: 5px; margin: 5px;}
+table.listControl { padding: 3px; }
+.listControlAdvanced { border-right: solid 1px #fff; }
+td.listControl { border: solid 1px #fff; vertical-align: middle; text-align: center; 
+	font-weight: bold; padding: 2px; font-size: 75%; }
+span.listControl { font-weight: normal; }
+input.listControl { font-size: 95%; }
+select.listControl { font-size: 85%; }
+td.generalDataHeader,td.generalData1,td.generalData2, td.generalDataError,tr.listTotals td { border-top: solid 1px black; padding: 2px 10px;}
+tr.listTotals { font-weight: bold; font-size:85%;}
+
+table.engineForm { border: solid 4px #e6e6e6; margin: 10px; border-radius: 10px; width: 50%; }
+div.toggleContent table.engineForm { width: 90%; }
+#table.engineForm td, table.engineForm th { border:inset 1px #e6e6e6; padding: 3px;}
+table.engineForm td { background-color #eeeeee; margin: 4px; padding: 4px; border-radius: 14px; }
+table.engineForm th { font-weight: bold; text-align: center; }
+
+.engineButton, .linkButton { border: solid 1px black; text-decoration: none; 
+	border-radius: 10px;
+	font-family: helvetica,georgia,sans-serif; font-size: 1em;
+	vertical-align: middle; 
+	background-color: #e6e6ff; color: #000; margin: 10px;}
+.linkButton { padding: 2px; }
+.engineButton { padding: 5px; font-weight: bold; font-style: italic; }
+.removeButton { border: solid 1px black; text-decoration: none; 
+	font-family: helvetica,georgia,sans-serif; font-size: 1em;
+	padding: 1px;
+	margin:0px 4px 0px 2px;
+	background-color: #e6e6e6; color: #000; }
+
+#engineMenu { position: absolute; right: 4px; border: solid 1px #ddd; padding: 8px; width: 185px; }
+#engineMenu span { white-space: nowrap; padding: 3px; display: block; text-align: center; margin: 15px 0px 3px 0px; }
+div.engineMain { margin: 0px 185px 0px 0px; }
+
+/* ordering arrows */
+.listOrderUp { background: url('../images/up_arrow.png') no-repeat center right; }
+.listOrderDown { background: url('../images/down_arrow.png') no-repeat center right; }
+.listOrderUp,.listOrderDown { padding: 2px 15px 2px 0px; }
+
+.engineLabel { background-color: #ffffd0; font-size: 70%;
+			text-align: right; }
+
+.engineValueContainer { background-color: #fffff0;
+			font-size: 110%;
+			text-align: left; }
+
+/* End Engine*/
+
+/* Client/Staff Child Records */
+.childListLeft { padding: 4px; margin: 0px 0px 0px 4px; display: block;
+	clear: left; float: left; width: 120px; }
+.childListTitle { padding: 4px; margin: 0px 0px 0px 4px; display: block; }
+.childListTitle img { width: 1.1em; } /* the little plus/minus buttons scale w/ text size*/
+.childListTitle h3 { display: inline; }
+.childListTitle a { font-size: 80%; }
+.childListTitleNull, .childListTitleDeny { margin: 0px 0px 0px 6px; display: block; padding: 4px 4px 4px 25px; height: 20px; }
+.childListTitleNull h3, .childListTitleDeny h3 { display: inline; font-size: 70%; font-weight: normal; }
+.childListTitleNull a, .childListTitleDeny span.deadlink, .childListTitleNull span.deadlink { font-size: 70%; }
+.childListTitleNull {background: url('../images/empty_button.png') no-repeat center left; }
+.childListTitleDeny {background: url('../images/deny_button.png') no-repeat center left; }
+
+.childListData { padding: 4px; margin: 0px 0px 0px 132px; }
+
+
+ul.childRecordListGeneric { list-style: none; }
+div.childRecordListGenericData { margin-left: 25px; }
+
+.childRecordListGeneric h6 {
+	padding-left: 20px; 
+	background: url('../images/dead_show_button.png') no-repeat center left;
+	height: 15px;
+}
+.childRecordListGeneric h4 { margin: 8px 0px; }
+.childRecordListGenericAddLink, .childRecordListGenericNoneLink { font-size: 8pt; }
+
+/* End Client/Staff Child Records */
+
+/* Revision History */
+
+.revision_history { 	border: solid 1px #000; margin: 5px; }
+.revision_history_header_col {  text-align: center; }
+.revision_history_header_row {  text-align: right; }
+.revision_history_header_col,.revision_history_header_row { font-size: 75%; font-weight: bold;}
+
+.revision_history_diff, .revision_history_same, 
+.revision_history_header_col, .revision_history_header_row { 
+	margin: 1px 1px 0px 0px;
+	padding: 3px;
+ }
+
+.revision_history_diff { font-weight: bold; }
+.revision_history_same { font-size: 75%; }
+
+/* end Revision History */
+
+/* Custom ID Blocks */
+#printerFriendlyCancel, #agencyTopHeader { border-bottom: inset 2px #888; padding: 0px 0px 2px 0px; margin: 0px; }
+/*
+#agencySideMenu { float: right; margin: 0px 2px 0px 12px; width: 180px; border-left: solid 1px #bbb; height: 100%; padding: 5px; }
+#agencySideMenu ul { list-style: none; margin: 0px; padding: 0px; }
+#agencySideMenu ul li { margin: 0px 0px 30px 0px; }
+.agencySideMenuLabel  { text-align: center; margin: 0px 0px 3px; 0px; }
+*/
+#mainContainer { float:left; }
+#objectCommandBox, #objectCommandBox a, #objectCommandBox acronym, #objectCommandBox input { font-size: 75%; }
+
+/* Quick Search */
+#QuickSearch { width: 320px; padding: 2px; vertical-align: middle; position: relative; right: 0; }
+.QuickSearchTabInactive, .QuickSearchTab { 
+	float: left; 
+	border-top: solid 1px #000088; 
+	border-right: solid 1px #000088; 
+	border-left: solid 1px #000088;
+	margin: 2px 3px -1px 0px; 
+	background-color: #fff;
+}
+div.QuickSearchTabInactive:hover, div.QuickSearchTab { border-bottom: none; position: relative; bottom: -1px;}
+div.QuickSearchTabInactive {  border-bottom: 1px solid #000088; }
+.QuickSearchTabInactive a, .QuickSearchTab a {
+	display: block;
+	padding: 2px;
+	margin: 0px;
+	width: 65px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 85%;
+	font-family: arial,georgia,helvetica,sans-serif;
+	text-decoration: none;
+	color: #000;
+}
+#QuickSearchBox { border: solid 1px #000088; clear: both;
+	padding: 9px 5px 3px 5px; margin: 0px;
+}
+#QuickSearchBox form { margin: 0px; }
+#QuickSearchBox input { border: solid 1px #666; }
+#QuickSearchBox input[type=text] { padding: 2px; margin: 0px -2px 0px 0px; width: 170px; }
+#QuickSearchBox input[type=submit] { padding: 1px; margin: 0px 0px 0px -2px; background-color: #666; color: #fff; font-weight: bold; width: 34px; }
+#QuickSearchBox a { font-size: 75%; text-decoration: none; }
+#QuickSearchBox a:hover { text-decoration: underline; color: #f00; }
+
+/* end Quick Search */
+
+/* error/ code display*/
+
+div.sqlCode {  
+	border: solid 1px black; color: #000; background-color: #efefef; 
+	padding: 2px; width: 60%; font-size: 75%; 
+	margin: 5px 25px; font-family: courier,serif;
+}
+
+div.sqlCode li {  
+	padding: 4px;
+}
+
+.staffServiceLinks {
+	z-index: 99; 
+	margin-left: 25px; 
+	text-align: right; 
+	float: right;
+}
+
+.boxHeader {
+	border-bottom: solid 1px black;
+	font-style: italic;
+	padding: 4px; 
+	white-space: nowrap; 
+	text-align: center;
+}
+
+.boxHeaderEmpty {
+	width: 200px;
+}
+
+.textHeader td { padding: 2px; }
+
+/* reports */
+.reportList { list-style: none;}
+li.reportFile, li.directory { margin: 5px; }
+li.reportFile a, li.reportFile span.deadlink { padding-left: 27px; background: url('../images/report.png') no-repeat center left;  }
+li.directory  a,li.directory span.deadlink { padding-left: 27px; background: url('../images/directory.png') no-repeat center left;  }
+h4.reportHeader, h4.reportFooter { width: 70%; border: solid 1px #afafaf; padding: 5px; margin:10px; }
+
+div.client_elevated_concern_short { padding: 3px 10px; }
+div.client_elevated_concern_short h3 { margin: 1px; }
+
+div.client_elevated_concern h4 { margin: 3px 0px 3px -7px; }
+
+
+div.client_elevated_concern { padding: 5px; }
+
+.updateEngine {     border: solid 1px #000; margin: 5px; background-color: #FFCDD0;
+ }
+
+.advancedControl { display: none; }

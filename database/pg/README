@@ -1,0 +1,11 @@
+This directory contains the files needed to create a AGENCY database.
+
+AGENCY now supports multiple flavors (currently client or donor).
+The files in the agency_core directory are installed first, and
+are presumably common across flavors.
+
+After the agency_core files are installed, then additional files
+are installed for your chosen flavor.
+
+See the README.install file for specific steps about how to install AGENCY.
+

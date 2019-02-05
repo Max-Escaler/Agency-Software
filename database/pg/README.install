@@ -1,0 +1,82 @@
+INSTALLATION.
+
+This file attemps to describe how to install AGENCY.
+AGENCY now supports multiple "flavors", currently
+"client" or "donor."  Please know which one you wish
+to install before proceeding! :)
+
+Note: This assumes the PostgreSQL server has already been installed and
+      initialized.
+
+Note: These instructions need a little updating.  Check the web for more
+	  current information, http://agency-software.org/.
+
+1) In the agency_core directory, edit install.db.sql, 
+   replacing {USER} with the desired username,
+   {PASSWORD} with the desired password and {DATABASE} with the
+   desired database name.
+
+   Note:  This section is commented out by default.  You will need to uncomment it!
+
+   Also, if email notification is desired, you need to download pgmail (http://sourceforge.net/projects/pgmail/),
+   and place the pgMail.sql file in the agency_core/pg_super_user directory.  Otherwise, uncomment the
+   pgmail placeholder function.
+
+2) Run the install.db.sql script as the postgres user:
+   # sudo su postgres
+   # psql template1
+   # \i install.db.sql
+   # \q
+   # exit
+
+3) In the agency_core directory, edit the add.initial_user.sql file.
+   At a minimum, you will want to change the username and password.
+   This will create an initial user within AGENCY, and is distinct from
+   the Postgres username & password.
+
+4) If you're running a webserver separate from the db server, or if you'll have multiple
+   servers connecting to the database, edit add.initial_access.sql to configure non-localhost
+   connections. If you are only running AGENCY on a single server, the access will be
+   localhost and you can ignore this step. Note: you may want to edit this file and define
+   the machine's IP address as local access, so you can refer to the database server by name
+   in step 6.
+   (NOTE:  If you just want to get started quickly, skip this step!)
+
+5) run psql as the newly created user (from step 1 and 2):
+   # psql -U {USER} -h localhost {DATABASE}
+
+5a) Run the appropriate install script for the flavor you want.
+	Only run one of these!
+
+   {DATABASE}# \i install.client_database.sql
+
+   or
+
+   {DATABASE}# \i install.donor_database.sql
+
+6) Now you need a agency_config_local.php file.  Change to the top level of your
+   AGENCY install, and copy the sample file that matches your flavor:
+
+   # cp agency_config_local.sample.client agency_config_local.php
+
+   Now edit this file so that the Postgres user, database and password matches
+   the values you chose in step 1.
+
+   Note: if you set the db server as anything other than localhost, 
+   you'll need to add a record to tbl_db_access. See step 4
+   for details.
+
+THIS SHOULD BE ALL YOU NEED TO GET A BASIC INSTALLATION OF AGENCY UP AND RUNNING.
+YOU SHOULD NOW BE ABLE TO BROWSE TO YOUR AGENCY INSTALLATION, FOR EXAMPLE:
+
+   https://localhost/agency
+
+The first time you do this, AGENCY will ask you to configure an engine array.  Do it!
+
+Now is a good time to enable table logging and changed_at triggers for your tables.
+You can do this from the AGENCY administration page.
+
+More information about AGENCY is available at agency-software.org.
+Now would also be a good time to sign up for one or more of the AGENCY mailing lists,
+or to make a donation to support this project!
+

@@ -1,0 +1,26 @@
+.pick { background-color: #83ba8b; }
+
+.notes { background-color: #94daff; }
+
+.homeMenu { color: #000; background-color: #bdf64a; }
+
+.listControl,.listControlAdvanced { background-color: #83ba8b; }
+.listHeader { background-color: #94daff }
+.listHeader td {
+	padding-bottom: 6px; 
+	padding-left: 4px; }
+
+td.generalDataHeader { background-color: #94daff; }
+
+.donorTitle { margin-right: 30%;}
+div.donorComment { width: 30%; float: right; }
+
+.donorComment { width: 100%; font: x-small sans-serif;}
+
+.donorCommentDate {
+	white-space: nowrap;
+	background-color: #acf;
+}
+
+.donorCommentNote {
+	background-color: #efefef; }

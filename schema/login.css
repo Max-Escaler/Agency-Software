@@ -1,0 +1,68 @@
+/*
+<LICENSE>
+
+This file is part of AGENCY.
+
+AGENCY is Copyright (c) 2003-2017 by Ken Tanzer and Downtown Emergency
+Service Center (DESC).
+
+All rights reserved.
+
+For more information about AGENCY, see http://agency-software.org/
+For more information about DESC, see http://www.desc.org/.
+
+AGENCY is free software: you can redistribute it and/or modify
+it under the terms of version 3 of the GNU General Public License
+as published by the Free Software Foundation.
+
+AGENCY is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with AGENCY.  If not, see <http://www.gnu.org/licenses/>.
+
+For additional information, see the README.copyright file that
+should be included in this distribution.
+
+</LICENSE>
+*/
+
+/* login form */
+body { background-color: #fff; font-family: arial,helvetica,georgia,sans-serif; text-align: center;}
+.loginForm { 
+	text-align: left;
+	font-weight: bold;
+	background-color: #efefef;
+	width: 500px;
+	padding: 25px;
+	border: solid 3px #000099;
+	margin: 30px auto;
+}
+.loginFormLabel { }
+input.loginFormBox { font-size: 216%;
+	padding: 3px;
+	width: 320px;
+	margin: 0px 0px 15px;
+	border: solid 1px #000099;
+	background-color: #fff;
+ }
+
+input.loginFormButton { font-size: 160%; 
+	border: solid 1px #000099;
+	color: #fff;
+	font-weight: bold;
+	background-color: #7eaed8;
+	margin: 5px 0px 15px 0px; padding: 3px;
+}
+
+.loginFormMessages { font-size: 100%; font-family: georgia,sans-serif; margin: 4px 0px;}
+#loginTitle { font-size: 26px; white-space: nowrap; margin: 0px 0px 10px 0px;}
+#loginTitle a { color: #000; text-decoration: none;}
+#loginTitle a:hover, #loginTitle a:active { color: #f00; text-decoration: underline;}
+#loginConfidential { font-family: georgia,sans-serif; font-size: 78%; 
+	text-align: justify; margin: 5px 0px; font-weight: normal; clear: both; }
+#loginContainer { width: 320px; float: left; }
+#loginImage { margin: 55px 0px 10px 30px; clear: right; text-align: center; background-color: none;}
+#loginAdvisory { float: right; background-color: #FFBBBB; font-color: red; }

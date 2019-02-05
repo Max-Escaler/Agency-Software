@@ -1,0 +1,80 @@
+/*
+<LICENSE>
+
+This file is part of AGENCY.
+
+AGENCY is Copyright (c) 2003-2017 by Ken Tanzer and Downtown Emergency
+Service Center (DESC).
+
+All rights reserved.
+
+For more information about AGENCY, see http://agency-software.org/
+For more information about DESC, see http://www.desc.org/.
+
+AGENCY is free software: you can redistribute it and/or modify
+it under the terms of version 3 of the GNU General Public License
+as published by the Free Software Foundation.
+
+AGENCY is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with AGENCY.  If not, see <http://www.gnu.org/licenses/>.
+
+For additional information, see the README.copyright file that
+should be included in this distribution.
+
+</LICENSE>
+*/
+
+/* colors
+	staff #dfffdf
+
+
+*/
+
+
+/* global styles here */
+
+
+/* classes */
+
+.listControl, .listControlAdvanced { display: none; }
+.clientCommentNote, .clientCommentDate, .staff, .listHeader, .listSubHeader, td.generalDataHeader,
+	tr.generalData1, tr.generalData2,tr.generalDataError,td.generalDataError,
+	tr.listTotals, tr.staffData1,tr.staffData2 {  background-color: #fff; }
+tr.generalDataError,td.generalDataError {  color: #000; }
+
+/* Custom ID Blocks */
+#agencyTopHeader,#mainCalendar, #agencyTopLoginBox, #agencySuperUser, 
+	#engineMenu { display: none; }
+
+/* Calendar */
+table.calendar { background-color: #fff; border: 1px solid #000; }
+ a.calendar {
+	color: #f00;
+	text-decoration: underline; }
+td.calendarH, td.calendarT { border: 1px solid #000; }
+td.calendarE { 
+	background-color: #ddd; 
+	border: 1px outset #000;
+}
+a.calendarE { color: #000; text-decoration: none; }
+a.calendarE:hover, a.calendarE:active { color: #00f; text-decoration: underline; }
+a.calendarConBox, a.navCalendar,div.navCalendar { color: #fff; background-color: #444; }
+	/* FIXME - the print css looks kind of crappy, and need some way to add this for calendar only:
+	 * @page {
+	 * size: landscape;
+	 */
+/* End Calendar */
+
+.agencyNoPrint,.hidden { display: none; }
+/* Printer Friendly Functionality Stuff Here */
+#printerFriendlyCancel { display: block; font-size: 75%;}
+
+@media print { 
+	#printerFriendlyCancel { display: none; }
+}
+

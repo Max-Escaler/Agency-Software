@@ -1,0 +1,36 @@
+AGENCY is free software intended for use by non-profit
+organizations, and may be useful to other people or
+groups as well.
+
+AGENCY is designed to be flexible and customizable.
+There are currently two 'flavors' of AGENCY:
+
+"client:"  Designed for social service agencies,
+especially homeless service organizations;
+
+"donor:"   Designed for fundraising purposes,
+to track donations and volunteers.
+
+For information about AGENCY goals and philosophy,
+see README.goals.
+
+AGENCY is a fork and continuation of CHASERS.
+For more information about the history of AGENCY
+and CHASERS, see README.history.
+
+At this point, all the code in AGENCY is
+copyright either by myself, or by Downtown
+Emergency Service Center.  See README.copyright
+for more information. 
+
+More information (and probably more current information)
+about AGENCY is available on the internet,
+at agency-software.org.
+
+For historical purposes, I've included the
+original README for CHASERS in this distribution
+of AGENCY.  See README.CHASERS.
+
+Ken Tanzer
+Seattle, WA  USA
+October, 2009

@@ -1,0 +1,145 @@
+<?php
+/*
+<LICENSE>
+
+This file is part of AGENCY.
+
+AGENCY is Copyright (c) 2003-2017 by Ken Tanzer and Downtown Emergency
+Service Center (DESC).
+
+All rights reserved.
+
+For more information about AGENCY, see http://agency-software.org/
+For more information about DESC, see http://www.desc.org/.
+
+AGENCY is free software: you can redistribute it and/or modify
+it under the terms of version 3 of the GNU General Public License
+as published by the Free Software Foundation.
+
+AGENCY is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with AGENCY.  If not, see <http://www.gnu.org/licenses/>.
+
+For additional information, see the README.copyright file that
+should be included in this distribution.
+
+</LICENSE>
+*/
+
+/*
+ * This sample file is for the donor database version of AGENCY.
+ *
+ * This file should be copied to agency_config_local.php and
+ * modified as needed for the local environment
+ *
+ * Don't check agency_config_local.php into CVS or Git!
+ */
+
+/*
+ * this is the _display_ term
+ */
+define('AG_MAIN_OBJECT','donor'); 
+
+/*
+ * this refers to the db tables and code functions (currently donor and client are supported)
+ * and is much more difficult to change.
+ */
+define('AG_MAIN_OBJECT_DB','donor'); 
+
+
+/*
+ * Use this for a Read-only mode.
+ * You will need to specify username and password
+ * in agency_config_db.php
+ */
+
+define('AG_READ_ONLY_MODE',false);
+
+/*
+ * Use this for kiosk mode. (auto-login)
+ *
+ * Note:  this is an AGENCY username (e.g., staff)
+ *
+ * Note:  DO NOT use this without considering security issues!
+ */
+
+// AG_KIOSK_MODE determines whether KIOSK mode is active
+define('AG_KIOSK_MODE',false);
+//define('AG_KIOSK_MODE',true);
+
+// This will let you specify users on a per-machine basis.  See kiosk.php for more detail.
+ 
+//define('AG_KIOSK_USER_BY_MACHINE_ID',serialize(
+//	array('66.210.63.251'=>'demo',
+//  array('127.0.0.1'=>'localhost_kiosk_user',
+// '*'=>'default_kiosk_user'))));
+
+// Or, a single kiosk user:
+// define('AG_KIOSK_USER_BY_MACHINE_ID',serialize(array('*'=>'kiosk_user')));
+
+// If no match from MACHINE_ID, use the (legacy) AG_KIOSK_USER instead.
+//define('AG_KIOSK_USER','demo');
+
+// If no user is defined, kiosk mode is not enabled
+
+/*
+ * Variables set on a per-machine basis.
+ *
+ * The constant AG_LOCAL_PARAMETERS will be set to
+ * the matched array, serialized.
+ */
+
+//define('AG_LOCAL_PARAMETERS_BY_MACHINE_ID',serialize(
+//	array('208.54.32.222'=>array('guest_register_housing_project_code'=>'HOUSING_1'),
+//	'*'=>array('guest_register_housing_project_code'=>'HOUSING_2'))));
+
+/*
+ * Error Logging
+ */
+define('AG_ERROR_LOG_FILE','/var/log/agency/agency_error.log');
+
+//enter email address(es) here to receive error notices.
+$mail_errors_to = '';
+
+/*
+ * system user for AGENCY -- currently used in re-registration
+ * of bednights for priority clients.  Also to determine manually-added charges.
+ */
+$sys_user = 1; 
+
+/*
+ * engine configuration array name stored in tbl_engine_config
+ */
+define('AG_ENGINE_CONFIG_ARRAY','engine');
+
+/*
+ * Uncomment this to use custom error_handler
+ */
+// set_error_handler('agency_error_handler');
+
+/*
+ * Paths and URLs
+ */
+
+// Base install
+$AG_HOME_BY_FILE = '/var/www/html/agency';
+$AG_HOME_BY_URL =  '/agency';
+
+// Client photos
+$AG_CLIENT_PHOTO_BY_FILE  = $AG_HOME_BY_FILE . '/photos';
+
+// Stafff photos
+$AG_STAFF_PHOTO_BY_FILE = $AG_HOME_BY_FILE . '/photos/staff';
+
+// Restrict certain users to certain pages
+// First page listed is where users will be
+// redirected on trying to load a non-listed page
+//$AG_USER_PAGE_RESTRICTIONS = array('demo'=>array('object_query.php','log_browse.php'));
+
+// Timezone
+DEFINE('AG_TIMEZONE','America/Los_Angeles');
+?>
